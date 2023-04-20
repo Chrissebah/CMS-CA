@@ -57,3 +57,22 @@
 
 }
 
+.info{
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.info img{
+    max-width: 300px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    max-height: 400px;
+    padding: 3px;
+}
+
+.info p{
+    
+}
+

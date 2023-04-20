@@ -1,13 +1,34 @@
-function getInfo() {
-    fetch("http://localhost/flower-power/wp-json/wc/store/products/31")
-    .then((response) => response.json())
-    .then((data) => {
-        console.log(data);
-
-    })
-    .catch((err) => {
-        console.log("Error occured", err);
-    });
+const container = document.querySelector(".info")
+async function fetchCall(){
+    const response = await fetch('http://localhost/flower-power/wp-json/wc/store/products')
+    const data = await response.json()
+    return data
 }
 
-getInfo();
+function renderPage(data) {
+const dataArray = data
+    dataArray.forEach(product => {
+        container.innerHTML +=
+         ` <div>
+        <img 
+        src="${product.images[0].src}"
+        alt="${product.name}" 
+        />
+    </div>
+
+    <div class="gameDescription">
+        <h1><u>${product.name}</u></h1>
+        <h2>Description</h2>
+        <p>${product.description}</p>
+    </div>
+`
+    })
+
+}
+
+async function render(){
+    const data = await fetchCall()
+    renderPage(data)
+}
+render() 
+
