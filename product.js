@@ -1,6 +1,6 @@
 const container = document.querySelector(".info")
 async function fetchCall(){
-    const response = await fetch('http://localhost/flower-power/wp-json/wc/store/products')
+    const response = await fetch('https://www.onechrissebah.no/wp-json/wc/store/products/')
     const data = await response.json()
     return data
 }

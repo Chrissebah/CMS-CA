@@ -1,4 +1,4 @@
-const url = "http://localhost/flower-power/wp-json/wc/store/products";
+const url = "https://www.onechrissebah.no/wp-json/wc/store/products/";
 const productContainer = document.querySelector(".products");
 
 async function getProducts(){
